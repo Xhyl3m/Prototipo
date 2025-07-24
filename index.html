@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frases Médicas en Audio</title>
+  <link rel="stylesheet" href="Meli.css">
+</head>
+<body>
+
+  <h1>Frases Médicas en Audio</h1>
+  <div class="container">
+
+    <!-- 🟡 DATOS PERSONALES -->
+    <h2>🟡 Datos Personales</h2>
+    <div class="section">
+      <button onclick="playAudio('nombre')">¿Cuál es su nombre completo?</button>
+      <button onclick="playAudio('edad')">¿Cuántos años tiene?</button>
+      <button onclick="playAudio('origen')">¿De dónde es usted?</button>
+      <button onclick="playAudio('ocupacion')">¿Cuál es su ocupación?</button>
+    </div>
+
+    <!-- 🔴 MOTIVO DE CONSULTA -->
+    <h2>🔴 Motivo de Consulta</h2>
+    <div class="section">
+      <button onclick="playAudio('molestias')">¿Qué molestias tiene?</button>
+      <button onclick="playAudio('desde_cuando')">¿Desde cuándo tiene estos síntomas?</button>
+      <button onclick="playAudio('donde_duele')">¿Dónde le duele?</button>
+      <button onclick="playAudio('como_duele')">¿Cómo es el dolor?</button>
+      <button onclick="playAudio('tipo_dolor')">¿Fuerte? ¿Leve? ¿Constante?</button>
+    </div>
+
+    <!-- 🔵 HISTORIAL MÉDICO -->
+    <h2>🔵 Historial Médico</h2>
+    <div class="section">
+      <button onclick="playAudio('cronica')">¿Tiene alguna enfermedad crónica?</button>
+      <button onclick="playAudio('medicamento')">¿Está tomando algún medicamento actualmente?</button>
+      <button onclick="playAudio('operacion')">¿Ha tenido alguna operación?</button>
+      <button onclick="playAudio('alergias')">¿Tiene alergias?</button>
+    </div>
+
+    <!-- 🟢 SÍNTOMAS COMUNES -->
+    <h2>🟢 Síntomas Comunes</h2>
+    <div class="section">
+      <button onclick="playAudio('fiebre')">¿Tiene fiebre?</button>
+      <button onclick="playAudio('tos')">¿Tiene tos?</button>
+      <button onclick="playAudio('nauseas')">¿Tiene náuseas o vómitos?</button>
+      <button onclick="playAudio('aire')">¿Le falta el aire?</button>
+      <button onclick="playAudio('digestivo')">¿Tiene diarrea o estreñimiento?</button>
+    </div>
+
+    <!-- 🟣 PREGUNTAS PARA MUJERES -->
+    <h2>🟣 Preguntas para Mujeres</h2>
+    <div class="section">
+      <button onclick="playAudio('embarazo')">¿Está embarazada?</button>
+      <button onclick="playAudio('menstruacion')">¿Cuándo fue su última menstruación?</button>
+    </div>
+
+    <!-- ⚪️ INDICACIONES MÉDICAS -->
+    <h2>⚪️ Indicaciones Finales del Médico</h2>
+    <div class="section">
+      <button onclick="playAudio('presion')">Le voy a tomar la presión</button>
+      <button onclick="playAudio('recetar')">Le voy a recetar un medicamento</button>
+      <button onclick="playAudio('reposo')">Debe guardar reposo</button>
+      <button onclick="playAudio('regreso')">Tiene que regresar en una semana</button>
+      <button onclick="playAudio('derivar')">Voy a derivarlo a otro especialista</button>
+    </div>
+
+    <!-- Audios ocultos -->
+    <audio id="nombre" src="audios/audio1.mp4"></audio>
+    <audio id="edad" src="audios/audio2.mp4"></audio>
+    <audio id="origen" src="audios/audio3.mp4"></audio>
+    <audio id="ocupacion" src="audios/audio4.mp4"></audio>
+
+    <audio id="molestias" src="audios/molestias.mp3"></audio>
+    <audio id="desde_cuando" src="audios/desde_cuando.mp3"></audio>
+    <audio id="donde_duele" src="audios/donde_duele.mp3"></audio>
+    <audio id="como_duele" src="audios/como_duele.mp3"></audio>
+    <audio id="tipo_dolor" src="audios/tipo_dolor.mp3"></audio>
+
+    <audio id="cronica" src="audios/cronica.mp3"></audio>
+    <audio id="medicamento" src="audios/medicamento.mp3"></audio>
+    <audio id="operacion" src="audios/operacion.mp3"></audio>
+    <audio id="alergias" src="audios/alergias.mp3"></audio>
+
+    <audio id="fiebre" src="audios/fiebre.mp3"></audio>
+    <audio id="tos" src="audios/tos.mp3"></audio>
+    <audio id="nauseas" src="audios/nauseas.mp3"></audio>
+    <audio id="aire" src="audios/aire.mp3"></audio>
+    <audio id="digestivo" src="audios/digestivo.mp3"></audio>
+
+    <audio id="embarazo" src="audios/embarazo.mp3"></audio>
+    <audio id="menstruacion" src="audios/menstruacion.mp3"></audio>
+
+    <audio id="presion" src="audios/presion.mp3"></audio>
+    <audio id="recetar" src="audios/recetar.mp3"></audio>
+    <audio id="reposo" src="audios/reposo.mp3"></audio>
+    <audio id="regreso" src="audios/regreso.mp3"></audio>
+    <audio id="derivar" src="audios/derivar.mp3"></audio>
+
+  </div>
+
+  <script>
+    let currentAudio = null;
+    function playAudio(id) {
+      if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+      currentAudio = document.getElementById(id);
+      currentAudio.play();
+    }
+  </script>
+</body>
+</html>
